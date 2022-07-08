@@ -1,0 +1,8 @@
+deep-translator==1.8.3
+ipykernel==6.15.0
+ipython==8.4.0
+py4j==0.10.9.5
+pyspark==3.3.0
+thefuzz==0.19.0
+pandas==1.4.3
+
