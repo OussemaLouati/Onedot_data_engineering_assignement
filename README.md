@@ -75,27 +75,6 @@ The codebase is structured as follows:
 
 ![data-flow](assets/data-flow.png)
 
-## Product matching, enriching existing products, adding new products
-
-1. Prequisites: 
-    - A target Database
-    - New Products to integrate
-
-2. Test product similarity
-  Approaches:
-    - `Deep Metric Learning`, eg: [BERT](https://aclanthology.org/2020.ecomnlp-1.7.pdf) , 
-      - Advantages: This has proved to have Good Performance across complex problems.
-      - Potential issues: Model is so big and needs a large amount of resources
-    - `Deep learning model` which takes in the two product names and model type and computes a `similarity` score: 
-      - Advantages: Won't take much resources
-      - Disadvantages: Won't work on products with different spellings
-
-3. `If` product matches existing one:
-     We enrich existing products with attributes that exists in the new product and are missing from the target database
-   `Else` We add new product to the target database
-              
-4. Deep learning model is trained continuously on the Target database and best model checkpoint is saved. When new products come, we use the latest checkpoint to run the inference pipeline.
-
 ## Extra
 
 1. To map cities to their corresponding country code, we used an external database downloaded from: [geonames-all-cities-with-a-population-1000](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000)
